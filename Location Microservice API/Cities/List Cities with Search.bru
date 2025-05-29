@@ -1,0 +1,19 @@
+meta {
+  name: List Cities with Search
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/api/v1/cities/?search=los
+  body: none
+  auth: none
+}
+
+params:query {
+  search: los
+}
+
+docs {
+  Search cities by name.
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Get Cities by State with Missing ID
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{baseUrl}}/api/v1/cities/by_state/
+  body: none
+  auth: none
+}
+
+docs {
+  Get cities by state without providing a state ID (should return an error).
+}

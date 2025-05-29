@@ -1,0 +1,19 @@
+meta {
+  name: Global Search - Empty Query
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/v1/search/?q=
+  body: none
+  auth: none
+}
+
+params:query {
+  q: 
+}
+
+docs {
+  Search across countries, states, and cities with an empty query (should return empty results).
+}

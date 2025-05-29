@@ -1,0 +1,19 @@
+meta {
+  name: Get Cities by Invalid State
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{baseUrl}}/api/v1/cities/by_state/?state_id=9999
+  body: none
+  auth: none
+}
+
+params:query {
+  state_id: 9999
+}
+
+docs {
+  Get cities by an invalid state ID (should return an error).
+}

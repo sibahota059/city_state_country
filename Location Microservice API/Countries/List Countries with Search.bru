@@ -1,0 +1,19 @@
+meta {
+  name: List Countries with Search
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/v1/countries/?search=united
+  body: none
+  auth: none
+}
+
+params:query {
+  search: united
+}
+
+docs {
+  Search countries by name or shortname.
+}

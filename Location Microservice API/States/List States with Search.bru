@@ -1,0 +1,19 @@
+meta {
+  name: List States with Search
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/api/v1/states/?search=new
+  body: none
+  auth: none
+}
+
+params:query {
+  search: new
+}
+
+docs {
+  Search states by name.
+}

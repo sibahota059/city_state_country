@@ -1,0 +1,19 @@
+meta {
+  name: List Cities by State ID
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/v1/cities/?state_id=1
+  body: none
+  auth: none
+}
+
+params:query {
+  state_id: 1
+}
+
+docs {
+  Get cities filtered by state ID.
+}

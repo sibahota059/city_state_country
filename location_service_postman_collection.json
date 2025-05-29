@@ -1,0 +1,1489 @@
+{
+	"info": {
+		"_postman_id": "c5f24a6e-3d9b-4f83-b8d8-e5612bd7c39f",
+		"name": "Location Microservice API",
+		"description": "A comprehensive collection for testing the Location Microservice API, which provides endpoints for countries, states, and cities.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API Root",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						""
+					]
+				},
+				"description": "Get the API root with links to all available endpoints."
+			},
+			"response": []
+		},
+		{
+			"name": "Swagger Documentation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/swagger/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"swagger",
+						""
+					]
+				},
+				"description": "Get the Swagger UI documentation for the API."
+			},
+			"response": []
+		},
+		{
+			"name": "Countries",
+			"item": [
+				{
+					"name": "List All Countries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/countries/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"countries",
+								""
+							]
+						},
+						"description": "Get a paginated list of all countries."
+					},
+					"response": []
+				},
+				{
+					"name": "List Countries with Pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/countries/?page=2&page_size=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"countries",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "page_size",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Get a specific page of countries with custom page size."
+					},
+					"response": []
+				},
+				{
+					"name": "List Countries with Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/countries/?name=United",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"countries",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "United"
+								}
+							]
+						},
+						"description": "Get countries filtered by name."
+					},
+					"response": []
+				},
+				{
+					"name": "List Countries with Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/countries/?search=united",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"countries",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "united"
+								}
+							]
+						},
+						"description": "Search countries by name or shortname."
+					},
+					"response": []
+				},
+				{
+					"name": "List Countries with Ordering",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/countries/?ordering=name",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"countries",
+								""
+							],
+							"query": [
+								{
+									"key": "ordering",
+									"value": "name"
+								}
+							]
+						},
+						"description": "Get countries ordered by name (ascending)."
+					},
+					"response": []
+				},
+				{
+					"name": "List Countries with Ordering (Descending)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/countries/?ordering=-name",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"countries",
+								""
+							],
+							"query": [
+								{
+									"key": "ordering",
+									"value": "-name"
+								}
+							]
+						},
+						"description": "Get countries ordered by name (descending)."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Country by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/countries/1/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"countries",
+								"1",
+								""
+							]
+						},
+						"description": "Get details for a specific country by ID including its states."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Country Full Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/countries/1/full_details/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"countries",
+								"1",
+								"full_details",
+								""
+							]
+						},
+						"description": "Get full details for a specific country by ID including all states and cities."
+					},
+					"response": []
+				},
+				{
+					"name": "Search Countries by Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/countries/search/?name=india",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"countries",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "india"
+								}
+							]
+						},
+						"description": "Search countries by name."
+					},
+					"response": []
+				},
+				{
+					"name": "Search Countries with Empty Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/countries/search/?name=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"countries",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						},
+						"description": "Search countries with an empty name parameter (should return an error)."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Non-existent Country",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/countries/9999/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"countries",
+								"9999",
+								""
+							]
+						},
+						"description": "Try to get a country with a non-existent ID (should return a 404 error)."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for managing countries."
+		},
+		{
+			"name": "States",
+			"item": [
+				{
+					"name": "List All States",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/states/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"states",
+								""
+							]
+						},
+						"description": "Get a paginated list of all states."
+					},
+					"response": []
+				},
+				{
+					"name": "List States with Pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/states/?page=2&page_size=15",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"states",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "page_size",
+									"value": "15"
+								}
+							]
+						},
+						"description": "Get a specific page of states with custom page size."
+					},
+					"response": []
+				},
+				{
+					"name": "List States with Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/states/?name=California",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"states",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "California"
+								}
+							]
+						},
+						"description": "Get states filtered by name."
+					},
+					"response": []
+				},
+				{
+					"name": "List States by Country ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/states/?country_id=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"states",
+								""
+							],
+							"query": [
+								{
+									"key": "country_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Get states filtered by country ID."
+					},
+					"response": []
+				},
+				{
+					"name": "List States with Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/states/?search=new",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"states",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "new"
+								}
+							]
+						},
+						"description": "Search states by name."
+					},
+					"response": []
+				},
+				{
+					"name": "List States with Ordering",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/states/?ordering=name",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"states",
+								""
+							],
+							"query": [
+								{
+									"key": "ordering",
+									"value": "name"
+								}
+							]
+						},
+						"description": "Get states ordered by name (ascending)."
+					},
+					"response": []
+				},
+				{
+					"name": "Get State by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/states/1/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"states",
+								"1",
+								""
+							]
+						},
+						"description": "Get details for a specific state by ID including its cities."
+					},
+					"response": []
+				},
+				{
+					"name": "Get States by Country",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/states/by_country/?country_id=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"states",
+								"by_country",
+								""
+							],
+							"query": [
+								{
+									"key": "country_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Get states by country ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get States by Invalid Country",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/states/by_country/?country_id=9999",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"states",
+								"by_country",
+								""
+							],
+							"query": [
+								{
+									"key": "country_id",
+									"value": "9999"
+								}
+							]
+						},
+						"description": "Get states by an invalid country ID (should return an error)."
+					},
+					"response": []
+				},
+				{
+					"name": "Get States by Country with Missing ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/states/by_country/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"states",
+								"by_country",
+								""
+							]
+						},
+						"description": "Get states by country without providing a country ID (should return an error)."
+					},
+					"response": []
+				},
+				{
+					"name": "Search States by Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/states/search/?name=york",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"states",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "york"
+								}
+							]
+						},
+						"description": "Search states by name."
+					},
+					"response": []
+				},
+				{
+					"name": "Search States by Name with Country Filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/states/search/?name=new&country_id=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"states",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "new"
+								},
+								{
+									"key": "country_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Search states by name and filter by country ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Search States with Empty Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/states/search/?name=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"states",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						},
+						"description": "Search states with an empty name parameter (should return an error)."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Non-existent State",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/states/9999/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"states",
+								"9999",
+								""
+							]
+						},
+						"description": "Try to get a state with a non-existent ID (should return a 404 error)."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for managing states."
+		},
+		{
+			"name": "Cities",
+			"item": [
+				{
+					"name": "List All Cities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								""
+							]
+						},
+						"description": "Get a paginated list of all cities."
+					},
+					"response": []
+				},
+				{
+					"name": "List Cities with Pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/?page=2&page_size=20",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "page_size",
+									"value": "20"
+								}
+							]
+						},
+						"description": "Get a specific page of cities with custom page size."
+					},
+					"response": []
+				},
+				{
+					"name": "List Cities with Filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/?name=Los Angeles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Los Angeles"
+								}
+							]
+						},
+						"description": "Get cities filtered by name."
+					},
+					"response": []
+				},
+				{
+					"name": "List Cities by State ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/?state_id=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								""
+							],
+							"query": [
+								{
+									"key": "state_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Get cities filtered by state ID."
+					},
+					"response": []
+				},
+				{
+					"name": "List Cities with Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/?search=los",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "los"
+								}
+							]
+						},
+						"description": "Search cities by name."
+					},
+					"response": []
+				},
+				{
+					"name": "List Cities with Ordering",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/?ordering=name",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								""
+							],
+							"query": [
+								{
+									"key": "ordering",
+									"value": "name"
+								}
+							]
+						},
+						"description": "Get cities ordered by name (ascending)."
+					},
+					"response": []
+				},
+				{
+					"name": "Get City by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/1/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"1",
+								""
+							]
+						},
+						"description": "Get details for a specific city by ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cities by State",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/by_state/?state_id=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"by_state",
+								""
+							],
+							"query": [
+								{
+									"key": "state_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Get cities by state ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cities by State with Country Validation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/by_state/?state_id=1&country_id=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"by_state",
+								""
+							],
+							"query": [
+								{
+									"key": "state_id",
+									"value": "1"
+								},
+								{
+									"key": "country_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Get cities by state ID with country validation."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cities by Invalid State",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/by_state/?state_id=9999",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"by_state",
+								""
+							],
+							"query": [
+								{
+									"key": "state_id",
+									"value": "9999"
+								}
+							]
+						},
+						"description": "Get cities by an invalid state ID (should return an error)."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cities by State with Missing ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/by_state/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"by_state",
+								""
+							]
+						},
+						"description": "Get cities by state without providing a state ID (should return an error)."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cities by Country",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/by_country/?country_id=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"by_country",
+								""
+							],
+							"query": [
+								{
+									"key": "country_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Get cities by country ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cities by Invalid Country",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/by_country/?country_id=9999",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"by_country",
+								""
+							],
+							"query": [
+								{
+									"key": "country_id",
+									"value": "9999"
+								}
+							]
+						},
+						"description": "Get cities by an invalid country ID (should return an error)."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cities by Country with Missing ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/by_country/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"by_country",
+								""
+							]
+						},
+						"description": "Get cities by country without providing a country ID (should return an error)."
+					},
+					"response": []
+				},
+				{
+					"name": "Search Cities by Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/search/?name=san",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "san"
+								}
+							]
+						},
+						"description": "Search cities by name."
+					},
+					"response": []
+				},
+				{
+					"name": "Search Cities by Name with State Filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/search/?name=san&state_id=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "san"
+								},
+								{
+									"key": "state_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Search cities by name and filter by state ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Search Cities by Name with Country Filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/search/?name=san&country_id=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "san"
+								},
+								{
+									"key": "country_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Search cities by name and filter by country ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Search Cities by Name with State and Country Filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/search/?name=san&state_id=1&country_id=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "san"
+								},
+								{
+									"key": "state_id",
+									"value": "1"
+								},
+								{
+									"key": "country_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Search cities by name and filter by state ID and country ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Search Cities with Empty Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/search/?name=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								}
+							]
+						},
+						"description": "Search cities with an empty name parameter (should return an error)."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Non-existent City",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cities/9999/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"9999",
+								""
+							]
+						},
+						"description": "Try to get a city with a non-existent ID (should return a 404 error)."
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for managing cities."
+		},
+		{
+			"name": "Global Search",
+			"item": [
+				{
+					"name": "Global Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/search/?q=york",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "york"
+								}
+							]
+						},
+						"description": "Search across countries, states, and cities."
+					},
+					"response": []
+				},
+				{
+					"name": "Global Search - Multiple Words",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/search/?q=new york",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "new york"
+								}
+							]
+						},
+						"description": "Search across countries, states, and cities with multiple words."
+					},
+					"response": []
+				},
+				{
+					"name": "Global Search - Empty Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/search/?q=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": ""
+								}
+							]
+						},
+						"description": "Search across countries, states, and cities with an empty query (should return empty results)."
+					},
+					"response": []
+				},
+				{
+					"name": "Global Search - No Results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/search/?q=nonexistentlocation123",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "nonexistentlocation123"
+								}
+							]
+						},
+						"description": "Search across countries, states, and cities with a query that should return no results."
+					},
+					"response": []
+				},
+				{
+					"name": "Global Search - Country Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/search/?q=united",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "united"
+								}
+							]
+						},
+						"description": "Search that should primarily return country results."
+					},
+					"response": []
+				},
+				{
+					"name": "Global Search - State Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/search/?q=california",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "california"
+								}
+							]
+						},
+						"description": "Search that should primarily return state results."
+					},
+					"response": []
+				},
+				{
+					"name": "Global Search - City Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/search/?q=angeles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "angeles"
+								}
+							]
+						},
+						"description": "Search that should primarily return city results."
+					},
+					"response": []
+				}
+			],
+			"description": "Global search across countries, states, and cities."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}

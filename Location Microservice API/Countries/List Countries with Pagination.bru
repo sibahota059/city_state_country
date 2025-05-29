@@ -1,0 +1,20 @@
+meta {
+  name: List Countries with Pagination
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/v1/countries/?page=2&page_size=10
+  body: none
+  auth: none
+}
+
+params:query {
+  page: 2
+  page_size: 10
+}
+
+docs {
+  Get a specific page of countries with custom page size.
+}

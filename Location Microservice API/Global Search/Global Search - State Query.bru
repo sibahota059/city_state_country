@@ -1,0 +1,19 @@
+meta {
+  name: Global Search - State Query
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/api/v1/search/?q=california
+  body: none
+  auth: none
+}
+
+params:query {
+  q: california
+}
+
+docs {
+  Search that should primarily return state results.
+}

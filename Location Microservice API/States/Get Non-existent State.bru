@@ -1,0 +1,15 @@
+meta {
+  name: Get Non-existent State
+  type: http
+  seq: 14
+}
+
+get {
+  url: {{baseUrl}}/api/v1/states/9999/
+  body: none
+  auth: none
+}
+
+docs {
+  Try to get a state with a non-existent ID (should return a 404 error).
+}

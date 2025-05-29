@@ -1,0 +1,15 @@
+meta {
+  name: Get States by Country with Missing ID
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{baseUrl}}/api/v1/states/by_country/
+  body: none
+  auth: none
+}
+
+docs {
+  Get states by country without providing a country ID (should return an error).
+}

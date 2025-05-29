@@ -1,0 +1,19 @@
+meta {
+  name: List Countries with Ordering
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/api/v1/countries/?ordering=name
+  body: none
+  auth: none
+}
+
+params:query {
+  ordering: name
+}
+
+docs {
+  Get countries ordered by name (ascending).
+}

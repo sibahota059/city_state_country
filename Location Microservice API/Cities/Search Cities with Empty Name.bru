@@ -1,0 +1,19 @@
+meta {
+  name: Search Cities with Empty Name
+  type: http
+  seq: 19
+}
+
+get {
+  url: {{baseUrl}}/api/v1/cities/search/?name=
+  body: none
+  auth: none
+}
+
+params:query {
+  name: 
+}
+
+docs {
+  Search cities with an empty name parameter (should return an error).
+}

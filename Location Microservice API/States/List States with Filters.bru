@@ -1,0 +1,19 @@
+meta {
+  name: List States with Filters
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/v1/states/?name=California
+  body: none
+  auth: none
+}
+
+params:query {
+  name: California
+}
+
+docs {
+  Get states filtered by name.
+}

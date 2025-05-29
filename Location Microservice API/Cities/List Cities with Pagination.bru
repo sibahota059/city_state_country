@@ -1,0 +1,20 @@
+meta {
+  name: List Cities with Pagination
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/v1/cities/?page=2&page_size=20
+  body: none
+  auth: none
+}
+
+params:query {
+  page: 2
+  page_size: 20
+}
+
+docs {
+  Get a specific page of cities with custom page size.
+}

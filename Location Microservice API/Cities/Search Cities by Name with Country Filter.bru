@@ -1,0 +1,20 @@
+meta {
+  name: Search Cities by Name with Country Filter
+  type: http
+  seq: 17
+}
+
+get {
+  url: {{baseUrl}}/api/v1/cities/search/?name=san&country_id=1
+  body: none
+  auth: none
+}
+
+params:query {
+  name: san
+  country_id: 1
+}
+
+docs {
+  Search cities by name and filter by country ID.
+}

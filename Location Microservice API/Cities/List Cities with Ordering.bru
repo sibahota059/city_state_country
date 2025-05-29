@@ -1,0 +1,19 @@
+meta {
+  name: List Cities with Ordering
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/api/v1/cities/?ordering=name
+  body: none
+  auth: none
+}
+
+params:query {
+  ordering: name
+}
+
+docs {
+  Get cities ordered by name (ascending).
+}

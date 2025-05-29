@@ -1,0 +1,19 @@
+meta {
+  name: Search States by Name
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{baseUrl}}/api/v1/states/search/?name=york
+  body: none
+  auth: none
+}
+
+params:query {
+  name: york
+}
+
+docs {
+  Search states by name.
+}

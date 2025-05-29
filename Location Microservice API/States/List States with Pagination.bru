@@ -1,0 +1,20 @@
+meta {
+  name: List States with Pagination
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/v1/states/?page=2&page_size=15
+  body: none
+  auth: none
+}
+
+params:query {
+  page: 2
+  page_size: 15
+}
+
+docs {
+  Get a specific page of states with custom page size.
+}

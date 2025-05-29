@@ -1,0 +1,19 @@
+meta {
+  name: Search Countries with Empty Name
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{baseUrl}}/api/v1/countries/search/?name=
+  body: none
+  auth: none
+}
+
+params:query {
+  name: 
+}
+
+docs {
+  Search countries with an empty name parameter (should return an error).
+}

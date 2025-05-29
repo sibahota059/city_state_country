@@ -1,0 +1,19 @@
+meta {
+  name: Get Cities by Invalid Country
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{baseUrl}}/api/v1/cities/by_country/?country_id=9999
+  body: none
+  auth: none
+}
+
+params:query {
+  country_id: 9999
+}
+
+docs {
+  Get cities by an invalid country ID (should return an error).
+}

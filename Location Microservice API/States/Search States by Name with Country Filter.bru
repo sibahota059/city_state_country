@@ -1,0 +1,20 @@
+meta {
+  name: Search States by Name with Country Filter
+  type: http
+  seq: 12
+}
+
+get {
+  url: {{baseUrl}}/api/v1/states/search/?name=new&country_id=1
+  body: none
+  auth: none
+}
+
+params:query {
+  name: new
+  country_id: 1
+}
+
+docs {
+  Search states by name and filter by country ID.
+}

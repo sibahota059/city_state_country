@@ -1,0 +1,19 @@
+meta {
+  name: Global Search - No Results
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/v1/search/?q=nonexistentlocation123
+  body: none
+  auth: none
+}
+
+params:query {
+  q: nonexistentlocation123
+}
+
+docs {
+  Search across countries, states, and cities with a query that should return no results.
+}

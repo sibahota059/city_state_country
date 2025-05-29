@@ -1,0 +1,19 @@
+meta {
+  name: Global Search - City Query
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/api/v1/search/?q=angeles
+  body: none
+  auth: none
+}
+
+params:query {
+  q: angeles
+}
+
+docs {
+  Search that should primarily return city results.
+}

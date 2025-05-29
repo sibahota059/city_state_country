@@ -1,0 +1,15 @@
+meta {
+  name: Get Non-existent City
+  type: http
+  seq: 20
+}
+
+get {
+  url: {{baseUrl}}/api/v1/cities/9999/
+  body: none
+  auth: none
+}
+
+docs {
+  Try to get a city with a non-existent ID (should return a 404 error).
+}

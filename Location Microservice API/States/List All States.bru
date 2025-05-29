@@ -1,0 +1,15 @@
+meta {
+  name: List All States
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/v1/states/
+  body: none
+  auth: none
+}
+
+docs {
+  Get a paginated list of all states.
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Global Search
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/v1/search/?q=york
+  body: none
+  auth: none
+}
+
+params:query {
+  q: york
+}
+
+docs {
+  Search across countries, states, and cities.
+}

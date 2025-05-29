@@ -1,0 +1,19 @@
+meta {
+  name: Search States with Empty Name
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{baseUrl}}/api/v1/states/search/?name=
+  body: none
+  auth: none
+}
+
+params:query {
+  name: 
+}
+
+docs {
+  Search states with an empty name parameter (should return an error).
+}

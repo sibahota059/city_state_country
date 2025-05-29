@@ -1,0 +1,20 @@
+meta {
+  name: Get Cities by State with Country Validation
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/api/v1/cities/by_state/?state_id=1&country_id=1
+  body: none
+  auth: none
+}
+
+params:query {
+  state_id: 1
+  country_id: 1
+}
+
+docs {
+  Get cities by state ID with country validation.
+}

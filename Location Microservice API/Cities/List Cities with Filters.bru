@@ -1,0 +1,19 @@
+meta {
+  name: List Cities with Filters
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/v1/cities/?name=Los Angeles
+  body: none
+  auth: none
+}
+
+params:query {
+  name: Los Angeles
+}
+
+docs {
+  Get cities filtered by name.
+}

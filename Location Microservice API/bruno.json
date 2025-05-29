@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Location Microservice API",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -1,0 +1,19 @@
+meta {
+  name: List Countries with Filters
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/v1/countries/?name=United
+  body: none
+  auth: none
+}
+
+params:query {
+  name: United
+}
+
+docs {
+  Get countries filtered by name.
+}

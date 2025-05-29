@@ -1,0 +1,19 @@
+meta {
+  name: Search Cities by Name
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{baseUrl}}/api/v1/cities/search/?name=san
+  body: none
+  auth: none
+}
+
+params:query {
+  name: san
+}
+
+docs {
+  Search cities by name.
+}

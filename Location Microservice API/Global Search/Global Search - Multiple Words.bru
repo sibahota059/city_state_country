@@ -1,0 +1,19 @@
+meta {
+  name: Global Search - Multiple Words
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/v1/search/?q=new york
+  body: none
+  auth: none
+}
+
+params:query {
+  q: new york
+}
+
+docs {
+  Search across countries, states, and cities with multiple words.
+}
